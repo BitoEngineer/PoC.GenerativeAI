@@ -1,0 +1,6 @@
+# .dockerignore
+bin/
+obj/
+*.md
+.git
+.vsc
