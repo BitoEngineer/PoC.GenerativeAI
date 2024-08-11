@@ -1,7 +1,7 @@
 ﻿# Build the Docker image
 # docker build -t insightsextractorapi .
 # Run the Docker container
-# docker run -d -p 5000:5000 --name insightsextractorapi-container insightsextractorapi
+# docker run -d -p 8080:8080 --name insightsextractorapi-container insightsextractorapi
 # Base runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
