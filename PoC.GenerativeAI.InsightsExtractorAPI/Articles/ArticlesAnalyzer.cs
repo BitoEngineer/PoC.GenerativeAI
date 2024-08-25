@@ -22,22 +22,28 @@ namespace PoC.GenerativeAI.InsightsExtractorAPI.News
     {
         private readonly ILLMClientFactory _llmClientFactory;
 
-        public ArticlesAnalyzer(ILLMClientFactory llmClientFactory)
+        public ArticlesAnalyzer(
+            //[FromKeyedServices("openai")] ILLMClientFactory llmClientFactory
+            [FromKeyedServices("semantic-kernel")] ILLMClientFactory llmClientFactory
+        )
         {
             ArgumentNullException.ThrowIfNull(llmClientFactory, nameof(llmClientFactory));
 
             _llmClientFactory = llmClientFactory;
         }
-
+        
         public async Task<ArticleOutputDto> AnalyzeAsync(
             ArticleInputDto input,
             string apiKey,
             string model,
             CancellationToken cancellationToken)
         {
-            var prompt = input.Content.ToAnalysisPrompt<ArticleOutputDto>();
             var outputDtoJson = await _llmClientFactory.CreateClient(apiKey, model)
-                                    .GetAnswerAsync(prompt, cancellationToken: cancellationToken);
+                                    .GetAnswerAsync(
+                                        persona: ArticlePromptBuilder.GetPersona(),
+                                        prompt: input.ToAnalysisPrompt(),
+                                        desiredOutput: ArticlePromptBuilder.GetJsonOutput<ArticleOutputDto>(),
+                                        cancellationToken: cancellationToken);
 
             if (!outputDtoJson.TryDeserialize(out ArticleOutputDto outputDto))
             {

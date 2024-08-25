@@ -11,9 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\libs\PoC.GenerativeAI.LLMClient.OpenAI\PoC.GenerativeAI.LLMClient.OpenAI.csproj" />
-    <ProjectReference Include="..\libs\PoC.GenerativeAI.LLMClient\PoC.GenerativeAI.LLMClient.csproj" />
-    <ProjectReference Include="..\libs\PoC.GenerativeAI.Utils\PoC.GenerativeAI.Utils.csproj" />
+    <ProjectReference Include="..\PoC.GenerativeAI.LLMClient.OpenAI\PoC.GenerativeAI.LLMClient.OpenAI.csproj" />
+    <ProjectReference Include="..\PoC.GenerativeAI.LLMClient.SemanticKernel.Articles\PoC.GenerativeAI.LLMClient.SemanticKernel.Articles.csproj" />
+    <ProjectReference Include="..\PoC.GenerativeAI.LLMClient.SemanticKernel\PoC.GenerativeAI.LLMClient.SemanticKernel.csproj" />
+    <ProjectReference Include="..\PoC.GenerativeAI.Utils\PoC.GenerativeAI.Utils.csproj" />
   </ItemGroup>
 
 </Project>

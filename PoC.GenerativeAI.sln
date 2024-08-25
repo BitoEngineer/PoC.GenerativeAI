@@ -7,11 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.GenerativeAI.InsightsEx
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{E04CBD72-96CC-4582-A6F8-61D8E6BEEDED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.GenerativeAI.LLMClient", "libs\PoC.GenerativeAI.LLMClient\PoC.GenerativeAI.LLMClient.csproj", "{8EC329F0-5B2B-4EA1-A83D-D99CEDF14554}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.GenerativeAI.LLMClient", "PoC.GenerativeAI.LLMClient\PoC.GenerativeAI.LLMClient.csproj", "{8EC329F0-5B2B-4EA1-A83D-D99CEDF14554}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.GenerativeAI.LLMClient.OpenAI", "libs\PoC.GenerativeAI.LLMClient.OpenAI\PoC.GenerativeAI.LLMClient.OpenAI.csproj", "{3A731836-3B65-4EAF-86DA-ADF6D1F94751}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.GenerativeAI.LLMClient.OpenAI", "PoC.GenerativeAI.LLMClient.OpenAI\PoC.GenerativeAI.LLMClient.OpenAI.csproj", "{3A731836-3B65-4EAF-86DA-ADF6D1F94751}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.GenerativeAI.Utils", "libs\PoC.GenerativeAI.Utils\PoC.GenerativeAI.Utils.csproj", "{11EC42B5-2A63-461A-971F-E640F3E42C3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.GenerativeAI.Utils", "PoC.GenerativeAI.Utils\PoC.GenerativeAI.Utils.csproj", "{11EC42B5-2A63-461A-971F-E640F3E42C3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.GenerativeAI.LLMClient.SemanticKernel", "PoC.GenerativeAI.LLMClient.SemanticKernel\PoC.GenerativeAI.LLMClient.SemanticKernel.csproj", "{160B956B-C1C2-4D0E-9E73-5976D01F8919}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.GenerativeAI.LLMClient.SemanticKernel.Articles", "PoC.GenerativeAI.LLMClient.SemanticKernel.Articles\PoC.GenerativeAI.LLMClient.SemanticKernel.Articles.csproj", "{88C32583-783D-4677-A9C6-2D88352A4486}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,14 @@ Global
 		{11EC42B5-2A63-461A-971F-E640F3E42C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11EC42B5-2A63-461A-971F-E640F3E42C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11EC42B5-2A63-461A-971F-E640F3E42C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{160B956B-C1C2-4D0E-9E73-5976D01F8919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{160B956B-C1C2-4D0E-9E73-5976D01F8919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{160B956B-C1C2-4D0E-9E73-5976D01F8919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{160B956B-C1C2-4D0E-9E73-5976D01F8919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C32583-783D-4677-A9C6-2D88352A4486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C32583-783D-4677-A9C6-2D88352A4486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C32583-783D-4677-A9C6-2D88352A4486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C32583-783D-4677-A9C6-2D88352A4486}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +55,8 @@ Global
 		{8EC329F0-5B2B-4EA1-A83D-D99CEDF14554} = {E04CBD72-96CC-4582-A6F8-61D8E6BEEDED}
 		{3A731836-3B65-4EAF-86DA-ADF6D1F94751} = {E04CBD72-96CC-4582-A6F8-61D8E6BEEDED}
 		{11EC42B5-2A63-461A-971F-E640F3E42C3A} = {E04CBD72-96CC-4582-A6F8-61D8E6BEEDED}
+		{160B956B-C1C2-4D0E-9E73-5976D01F8919} = {E04CBD72-96CC-4582-A6F8-61D8E6BEEDED}
+		{88C32583-783D-4677-A9C6-2D88352A4486} = {E04CBD72-96CC-4582-A6F8-61D8E6BEEDED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A69A09A1-901C-4676-A384-2044C8C54969}

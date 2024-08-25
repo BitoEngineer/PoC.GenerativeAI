@@ -1,6 +1,7 @@
 ﻿using OpenAI;
 using OpenAI.Managers;
 using OpenAI.ObjectModels.RequestModels;
+using System.Runtime.InteropServices.Marshalling;
 
 namespace PoC.GenerativeAI.LLMClient.OpenAI
 {
@@ -17,11 +18,17 @@ namespace PoC.GenerativeAI.LLMClient.OpenAI
         }
 
         public async Task<string> GetAnswerAsync(
+            string persona,
             string prompt,
+            string desiredOutput,
             string model = null,
             CancellationToken cancellationToken = default)
         {
-            var messages = new List<ChatMessage> { ChatMessage.FromSystem(prompt) };
+            var messages = new List<ChatMessage> {
+                ChatMessage.FromSystem(persona),
+                ChatMessage.FromUser(prompt),
+                ChatMessage.FromSystem(desiredOutput)
+            };
             var completionResult = await ChatCompletion.CreateCompletion(new ChatCompletionCreateRequest
             {
                 Messages = messages,

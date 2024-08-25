@@ -3,6 +3,8 @@ using PoC.GenerativeAI.InsightsExtractorAPI.Articles.DependencyInjection;
 using PoC.GenerativeAI.InsightsExtractorAPI.News;
 using PoC.GenerativeAI.InsightsExtractorAPI.News.Dtos;
 using PoC.GenerativeAI.LLMClient.OpenAI.DependencyInjection;
+using PoC.GenerativeAI.LLMClient.SemanticKernel.DependencyInjection;
+using PoC.GenerativeAI.LLMClient.SemanticKernel.Articles.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,6 +54,16 @@ await app.RunAsync();
 
 static void ConfigureDependencyInjection(WebApplicationBuilder builder)
 {
-    builder.Services.AddOpenAiClientFactory();
-    builder.Services.AddArticlesAnalyzer();
+    builder.Services
+        .AddOpenAiClientFactory();
+
+    builder.Services
+        .AddLogging(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug));
+
+    builder.Services
+        .AddOpenAiSemanticKernelClientFactory()
+        .RegisterArticlesKernelPlugins();
+
+    builder.Services
+        .AddArticlesAnalyzer();
 }

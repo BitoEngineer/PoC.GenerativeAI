@@ -22,10 +22,11 @@ namespace PoC.GenerativeAI.LLMClient.OpenAI.DependencyInjection
 
             return serviceCollection;
         }
+
         public static IServiceCollection AddOpenAiClientFactory(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddHttpClient();
-            serviceCollection.AddSingleton<ILLMClientFactory, OpenAiClientFactory>();
+            serviceCollection.AddKeyedSingleton<ILLMClientFactory, OpenAiClientFactory>("openai");
 
             return serviceCollection;
         }

@@ -3,7 +3,9 @@
     public interface ILLMClient
     {
         Task<string> GetAnswerAsync(
+            string persona,
             string prompt,
+            string desiredOutput,
             string model = null,
             CancellationToken cancellationToken = default);
 
